@@ -55,10 +55,7 @@ nevergrad = ">=0.4.3"  # TODO: avoid expensive bayesian optimization dep
 numpy = "<2.0.0"  # https://stackoverflow.com/questions/78533824/local-installation-of-drake-on-macos-sonoma
 psutil = ">=5.9.*"
 #pymcubes = ">=0.0.9"
-pyzmq = [ 
-  {platform="darwin", version=">=25.0.0"}, # needed for python 3.11?
-  {platform="linux", version="<25.0.0"},   # needed for deepnote
-]
+pyzmq = ">=25.0.0"
 scipy = ">=1.10.0"  # From github dependabot
 stable-baselines3 = ">=2.0.0"
 timeout-decorator = ">=0.4.1"
