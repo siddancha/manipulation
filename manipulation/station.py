@@ -1000,6 +1000,9 @@ def MakeHardwareStation(
             scenario.visualization, builder, meshcat=meshcat, lcm_buses=lcm_buses
         )
 
+    if prebuild_callback:
+        prebuild_callback(builder)
+
     # Export "cheat" ports.
     builder.ExportInput(
         sim_plant.get_applied_generalized_force_input_port(),
@@ -1023,9 +1026,6 @@ def MakeHardwareStation(
         )
     # Export the only SceneGraph output port.
     builder.ExportOutput(scene_graph.get_query_output_port(), "query_object")
-
-    if prebuild_callback:
-        prebuild_callback(builder)
 
     diagram = robot_builder.Build()
     diagram.set_name("station")
